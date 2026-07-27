@@ -150,6 +150,19 @@
   .foot img { height: 34px; }
   .foot p { color: var(--muted); font-size: 14px; }
 
+  /* ---------- Embedded form ---------- */
+  .form-embed {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    box-shadow: var(--shadow-md); overflow: hidden; padding: 8px;
+  }
+  .form-embed iframe { display: block; width: 100%; border: 0; border-radius: 10px; }
+  .form-fallback { text-align: center; margin-top: 18px; color: var(--muted); font-size: 0.95rem; }
+  .form-fallback a { color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .form-fallback a:hover { color: var(--navy); }
+
+  /* Offset anchor scroll so the sticky header doesn't cover the target */
+  #form { scroll-margin-top: 90px; }
+
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; scroll-behavior: auto !important; }
   }
@@ -162,7 +175,7 @@
       <a class="brand" href="#" aria-label="Edge Academy home">
         <img src="logo.png" alt="Edge Academy" />
       </a>
-      <a class="btn btn-nav nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdnAcVVbLbURq1L2jv8x71wqqMNCGyQOtEXjSDNW9VsgGLtew/viewform?usp=header">Start pre-consultation</a>
+      <a class="btn btn-nav nav-cta" href="#form">Start pre-consultation</a>
     </div>
   </header>
 
@@ -174,7 +187,7 @@
         <h1>Discover how AI can give your business <span class="accent">the edge</span></h1>
         <p class="lead">Complete a short pre-consultation and we'll pinpoint the smartest, most practical ways to put AI to work — tailored to your business, your goals and your team.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdnAcVVbLbURq1L2jv8x71wqqMNCGyQOtEXjSDNW9VsgGLtew/viewform?usp=header">
+          <a class="btn btn-primary btn-lg" href="#form">
             Start your pre-consultation
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -244,13 +257,32 @@
       </div>
     </section>
 
+    <!-- FORM -->
+    <section class="section" id="form" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Your pre-consultation</h2>
+          <p>Fill in the short form below. Once you submit it, you'll unlock your next steps &mdash; book a free consultation with Jeremy, or explore our intro webinar.</p>
+        </div>
+        <div class="form-embed">
+          <iframe
+            title="Edge Academy pre-consultation form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdnAcVVbLbURq1L2jv8x71wqqMNCGyQOtEXjSDNW9VsgGLtew/viewform?embedded=true"
+            width="100%" height="1400" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
+            Loading form&hellip;
+          </iframe>
+        </div>
+        <p class="form-fallback">Form not loading? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnAcVVbLbURq1L2jv8x71wqqMNCGyQOtEXjSDNW9VsgGLtew/viewform" target="_blank" rel="noopener noreferrer">Open it in a new tab</a>.</p>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="section" style="padding-top:0;">
       <div class="wrap">
         <div class="cta-band">
           <h2>Ready to get started?</h2>
           <p>It takes just a few minutes. Complete your pre-consultation and we'll help you find your edge.</p>
-          <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdnAcVVbLbURq1L2jv8x71wqqMNCGyQOtEXjSDNW9VsgGLtew/viewform?usp=header">
+          <a class="btn btn-primary btn-lg" href="#form">
             Start your pre-consultation
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
