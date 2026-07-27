@@ -94,14 +94,32 @@
   .assure svg { flex: none; }
   .hero-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
   .hero-copy { min-width: 0; }
-  .hero-visual { justify-self: center; width: 100%; max-width: 460px; animation: floaty 6s ease-in-out infinite; }
-  .hero-svg { width: 100%; height: auto; display: block; }
+  .hero-visual { position: relative; justify-self: center; width: 100%; max-width: 500px; padding: 22px 16px; }
+  .hero-svg { width: 100%; height: auto; display: block; animation: floaty 6s ease-in-out infinite; }
   .hero-visual .spark { transform-box: fill-box; transform-origin: center; animation: twinkle 3.2s ease-in-out infinite; }
+  .chip {
+    position: absolute; z-index: 2;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; color: var(--navy);
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px;
+    padding: 8px 13px; border-radius: 999px; white-space: nowrap;
+    box-shadow: 0 10px 26px rgba(16,29,66,0.18); border: 1px solid var(--border);
+  }
+  .chip-dot { width: 18px; height: 18px; border-radius: 50%; flex: none; display: grid; place-items: center; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); }
+  .chip-1 { top: 34px;  left: -8px;  animation: floaty 5s   ease-in-out infinite; }
+  .chip-2 { top: 96px;  right: -10px; animation: floaty 5.6s ease-in-out infinite; animation-delay: .4s; }
+  .chip-3 { bottom: 96px; left: -4px;  animation: floaty 6.2s ease-in-out infinite; animation-delay: .2s; }
+  .chip-4 { bottom: 34px; right: -4px; animation: floaty 5.3s ease-in-out infinite; animation-delay: .6s; }
   @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
   @media (min-width: 940px) {
     .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 56px; }
     .hero-visual { justify-self: end; }
+  }
+  @media (max-width: 560px) {
+    .chip { font-size: 11.5px; padding: 7px 11px; }
+    .chip-1, .chip-3 { left: 0; }
+    .chip-2, .chip-4 { right: 0; }
   }
 
   /* ---------- Sections ---------- */
@@ -195,48 +213,38 @@
         </div><!-- /hero-copy -->
 
         <div class="hero-visual">
-          <svg class="hero-svg" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of AI-driven business growth">
+          <svg class="hero-svg" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Deployment Rate chart showing rising AI adoption over time">
             <defs>
-              <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#1B316B"/><stop offset="1" stop-color="#0F1D42"/>
-              </linearGradient>
-              <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0" stop-color="#3F8A92"/><stop offset="1" stop-color="#6FBAC2"/>
-              </linearGradient>
-              <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#6FBAC2" stop-opacity="0.45"/><stop offset="1" stop-color="#6FBAC2" stop-opacity="0"/>
-              </linearGradient>
+              <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B316B"/><stop offset="1" stop-color="#0F1D42"/></linearGradient>
+              <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#3F8A92"/><stop offset="1" stop-color="#6FBAC2"/></linearGradient>
+              <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FBAC2" stop-opacity="0.45"/><stop offset="1" stop-color="#6FBAC2" stop-opacity="0"/></linearGradient>
               <radialGradient id="glow"><stop offset="0" stop-color="#6FBAC2" stop-opacity="0.85"/><stop offset="1" stop-color="#6FBAC2" stop-opacity="0"/></radialGradient>
               <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0B1638" flood-opacity="0.35"/></filter>
             </defs>
             <rect x="20" y="30" width="440" height="360" rx="28" fill="url(#card)" filter="url(#soft)"/>
             <rect x="20.5" y="30.5" width="439" height="359" rx="27.5" stroke="#ffffff" stroke-opacity="0.08"/>
+            <text x="52" y="80" font-family="'Space Grotesk', sans-serif" font-size="21" font-weight="600" fill="#EAF6F8">AI Deployment Rate</text>
             <g stroke="#ffffff" stroke-opacity="0.06">
-              <line x1="52" y1="110" x2="428" y2="110"/><line x1="52" y1="170" x2="428" y2="170"/>
-              <line x1="52" y1="230" x2="428" y2="230"/><line x1="52" y1="290" x2="428" y2="290"/>
+              <line x1="52" y1="140" x2="428" y2="140"/><line x1="52" y1="200" x2="428" y2="200"/><line x1="52" y1="260" x2="428" y2="260"/><line x1="52" y1="320" x2="428" y2="320"/>
             </g>
-            <circle cx="362" cy="118" r="72" fill="url(#glow)"/>
+            <circle cx="362" cy="150" r="70" fill="url(#glow)"/>
             <g>
-              <rect x="70"  y="250" width="40" height="80"  rx="10" fill="url(#bar)" opacity="0.5"/>
-              <rect x="138" y="220" width="40" height="110" rx="10" fill="url(#bar)" opacity="0.65"/>
-              <rect x="206" y="188" width="40" height="142" rx="10" fill="url(#bar)" opacity="0.8"/>
-              <rect x="274" y="150" width="40" height="180" rx="10" fill="url(#bar)"/>
-              <rect x="342" y="108" width="40" height="222" rx="10" fill="url(#bar)"/>
+              <rect x="70"  y="266" width="40" height="80"  rx="10" fill="url(#bar)" opacity="0.5"/>
+              <rect x="138" y="238" width="40" height="108" rx="10" fill="url(#bar)" opacity="0.65"/>
+              <rect x="206" y="208" width="40" height="138" rx="10" fill="url(#bar)" opacity="0.8"/>
+              <rect x="274" y="176" width="40" height="170" rx="10" fill="url(#bar)"/>
+              <rect x="342" y="140" width="40" height="206" rx="10" fill="url(#bar)"/>
             </g>
-            <path d="M90 250 L158 214 L226 182 L294 150 L362 118 L362 330 L90 330 Z" fill="url(#area)"/>
-            <path d="M90 250 L158 214 L226 182 L294 150 L362 118" stroke="#EAF6F8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <g fill="#0F1D42" stroke="#EAF6F8" stroke-width="3">
-              <circle cx="90" cy="250" r="5"/><circle cx="158" cy="214" r="5"/><circle cx="226" cy="182" r="5"/><circle cx="294" cy="150" r="5"/>
-            </g>
-            <circle cx="362" cy="118" r="9" fill="#6FBAC2"/><circle cx="362" cy="118" r="9" stroke="#EAF6F8" stroke-width="3"/>
-            <g transform="translate(400,74)" class="spark"><path d="M0 -20 L5 -5 L20 0 L5 5 L0 20 L-5 5 L-20 0 L-5 -5 Z" fill="#FFFFFF"/></g>
-            <g transform="translate(120,96)" opacity="0.85"><path d="M0 -11 L2.8 -2.8 L11 0 L2.8 2.8 L0 11 L-2.8 2.8 L-11 0 L-2.8 -2.8 Z" fill="#6FBAC2"/></g>
-            <g transform="translate(58,58)">
-              <rect x="0" y="0" width="92" height="34" rx="17" fill="#ffffff" fill-opacity="0.1" stroke="#6FBAC2" stroke-opacity="0.5"/>
-              <circle cx="20" cy="17" r="6" fill="#6FBAC2"/>
-              <text x="35" y="22" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600" fill="#EAF6F8">AI</text>
-            </g>
+            <path d="M90 266 L158 232 L226 202 L294 172 L362 150 L362 346 L90 346 Z" fill="url(#area)"/>
+            <path d="M90 266 L158 232 L226 202 L294 172 L362 150" stroke="#EAF6F8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#0F1D42" stroke="#EAF6F8" stroke-width="3"><circle cx="90" cy="266" r="5"/><circle cx="158" cy="232" r="5"/><circle cx="226" cy="202" r="5"/><circle cx="294" cy="172" r="5"/></g>
+            <circle cx="362" cy="150" r="9" fill="#6FBAC2"/><circle cx="362" cy="150" r="9" stroke="#EAF6F8" stroke-width="3"/>
+            <g transform="translate(410,86)" class="spark"><path d="M0 -18 L4.5 -4.5 L18 0 L4.5 4.5 L0 18 L-4.5 4.5 L-18 0 L-4.5 -4.5 Z" fill="#FFFFFF"/></g>
           </svg>
+          <span class="chip chip-1"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Better efficiency</span>
+          <span class="chip chip-2"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tailored to your business</span>
+          <span class="chip chip-3"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Save time &amp; money</span>
+          <span class="chip chip-4"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Practical quick wins</span>
         </div>
       </div>
     </section>
