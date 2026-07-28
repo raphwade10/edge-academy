@@ -100,6 +100,7 @@
   .hero-copy { min-width: 0; }
   .hero-visual { position: relative; justify-self: center; width: 100%; max-width: 500px; padding: 22px 16px; }
   .hero-svg { width: 100%; height: auto; display: block; animation: floaty 6s ease-in-out infinite; }
+  .hero-photo { width: 100%; height: auto; display: block; aspect-ratio: 6 / 5; object-fit: cover; border-radius: 22px; box-shadow: 0 26px 60px rgba(16,29,66,0.24); animation: floaty 6s ease-in-out infinite; }
   .hero-visual .spark { transform-box: fill-box; transform-origin: center; animation: twinkle 3.2s ease-in-out infinite; }
   .chip {
     position: absolute; z-index: 2;
@@ -131,6 +132,10 @@
   .section-head { text-align: center; max-width: 660px; margin: 0 auto 48px; }
   .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 700; }
   .section-head p { margin-top: 14px; color: var(--muted); font-size: 1.05rem; }
+  .how-grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: center; }
+  .how-media img { width: 100%; height: 100%; max-height: 440px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow-lg); display: block; }
+  .steps-vertical { display: flex; flex-direction: column; gap: 22px; }
+  @media (min-width: 820px) { .how-grid { grid-template-columns: 0.92fr 1.08fr; gap: 48px; } }
   .inline-link { color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
   .inline-link:hover { color: var(--navy); }
 
@@ -157,8 +162,9 @@
   /* ---------- Book band ---------- */
   .book-band {
     background:
-      radial-gradient(700px 400px at 90% 120%, rgba(87,165,173,0.35), transparent 60%),
-      linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      radial-gradient(700px 400px at 90% 120%, rgba(33,199,206,0.38), transparent 60%),
+      linear-gradient(135deg, rgba(15,29,66,0.92) 0%, rgba(22,40,90,0.82) 100%),
+      url('assets/team-work.jpg') center/cover no-repeat;
     color: #fff; border-radius: 24px; padding: 56px 40px; text-align: center; box-shadow: var(--shadow-lg);
   }
   .book-band h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); color: #fff; }
@@ -221,34 +227,7 @@
         </div><!-- /hero-copy -->
 
         <div class="hero-visual">
-          <svg class="hero-svg" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Deployment Rate chart showing rising AI adoption over time">
-            <defs>
-              <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B316B"/><stop offset="1" stop-color="#0F1D42"/></linearGradient>
-              <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#3F8A92"/><stop offset="1" stop-color="#6FBAC2"/></linearGradient>
-              <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FBAC2" stop-opacity="0.45"/><stop offset="1" stop-color="#6FBAC2" stop-opacity="0"/></linearGradient>
-              <radialGradient id="glow"><stop offset="0" stop-color="#6FBAC2" stop-opacity="0.85"/><stop offset="1" stop-color="#6FBAC2" stop-opacity="0"/></radialGradient>
-              <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0B1638" flood-opacity="0.35"/></filter>
-            </defs>
-            <rect x="20" y="30" width="440" height="360" rx="28" fill="url(#card)" filter="url(#soft)"/>
-            <rect x="20.5" y="30.5" width="439" height="359" rx="27.5" stroke="#ffffff" stroke-opacity="0.08"/>
-            <text x="52" y="80" font-family="'Space Grotesk', sans-serif" font-size="21" font-weight="600" fill="#EAF6F8">AI Deployment Rate</text>
-            <g stroke="#ffffff" stroke-opacity="0.06">
-              <line x1="52" y1="140" x2="428" y2="140"/><line x1="52" y1="200" x2="428" y2="200"/><line x1="52" y1="260" x2="428" y2="260"/><line x1="52" y1="320" x2="428" y2="320"/>
-            </g>
-            <circle cx="362" cy="150" r="70" fill="url(#glow)"/>
-            <g>
-              <rect x="70"  y="266" width="40" height="80"  rx="10" fill="url(#bar)" opacity="0.5"/>
-              <rect x="138" y="238" width="40" height="108" rx="10" fill="url(#bar)" opacity="0.65"/>
-              <rect x="206" y="208" width="40" height="138" rx="10" fill="url(#bar)" opacity="0.8"/>
-              <rect x="274" y="176" width="40" height="170" rx="10" fill="url(#bar)"/>
-              <rect x="342" y="140" width="40" height="206" rx="10" fill="url(#bar)"/>
-            </g>
-            <path d="M90 266 L158 232 L226 202 L294 172 L362 150 L362 346 L90 346 Z" fill="url(#area)"/>
-            <path d="M90 266 L158 232 L226 202 L294 172 L362 150" stroke="#EAF6F8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <g fill="#0F1D42" stroke="#EAF6F8" stroke-width="3"><circle cx="90" cy="266" r="5"/><circle cx="158" cy="232" r="5"/><circle cx="226" cy="202" r="5"/><circle cx="294" cy="172" r="5"/></g>
-            <circle cx="362" cy="150" r="9" fill="#6FBAC2"/><circle cx="362" cy="150" r="9" stroke="#EAF6F8" stroke-width="3"/>
-            <g transform="translate(410,86)" class="spark"><path d="M0 -18 L4.5 -4.5 L18 0 L4.5 4.5 L0 18 L-4.5 4.5 L-18 0 L-4.5 -4.5 Z" fill="#FFFFFF"/></g>
-          </svg>
+          <img class="hero-photo" src="assets/hero.jpg" alt="Business colleagues celebrating an AI win together" loading="eager">
           <span class="chip chip-1"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Better efficiency</span>
           <span class="chip chip-2"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tailored to your business</span>
           <span class="chip chip-3"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Save time &amp; money</span>
@@ -291,18 +270,23 @@
           <h2>How it works</h2>
           <p>Three simple steps to getting AI working for you.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="num">1</div>
-            <div><h4>Book your call</h4><p>Choose a time that suits you for a free, no-obligation consultation with Jeremy.</p></div>
+        <div class="how-grid">
+          <div class="how-media">
+            <img src="assets/collaborate.jpg" alt="A Singapore business team working together on their AI plan" loading="lazy">
           </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div><h4>Complete your pre-consultation form</h4><p>Fill in a short form so we understand your business before your call.</p></div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div><h4>Get your edge</h4><p>Walk away with clear, practical next steps for using AI in your business.</p></div>
+          <div class="steps-vertical">
+            <div class="step">
+              <div class="num">1</div>
+              <div><h4>Book your call</h4><p>Choose a time that suits you for a free, no-obligation consultation with Jeremy.</p></div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div><h4>Complete your pre-consultation form</h4><p>Fill in a short form so we understand your business before your call.</p></div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div><h4>Get your edge</h4><p>Walk away with clear, practical next steps for using AI in your business.</p></div>
+            </div>
           </div>
         </div>
       </div>
@@ -357,7 +341,7 @@
       var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
       if (mq && mq.matches) return;
       if (!('IntersectionObserver' in window)) return;
-      var els = document.querySelectorAll('.card, .step, .section-head, .book-band, .form-embed');
+      var els = document.querySelectorAll('.card, .step, .section-head, .book-band, .form-embed, .how-media');
       els.forEach(function (el) { el.classList.add('reveal-t'); });
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
