@@ -12,8 +12,9 @@
   --mr-purple:#16285A;--mr-purple-light:#57A5AD;--mr-purple-dark:#0F1D42;
   --mr-purple-bg:#EDF4F6;--mr-purple-pale:#DCEBEE;--white:#FFFFFF;
   --teal:#57A5AD;--teal-dark:#3F8A92;--navy:#16285A;--navy-deep:#0F1D42;
-  --gray-50:#F6F9FB;--gray-100:#EEF2F7;--gray-200:#E3E9F1;
+  --gray-50:#FBF7F1;--gray-100:#F2ECE3;--gray-200:#E9E1D6;
   --gray-400:#8595AE;--gray-600:#56658A;--gray-800:#243256;--text:#16285A;
+  --gold:#F6A93B;--gold-deep:#E4922A;--gold-soft:#FFF3DE;--bright:#21C7CE;--bright-deep:#12A9B4;
   --sans:'Inter',sans-serif;--display:'Space Grotesk',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -181,6 +182,60 @@ body{font-family:var(--sans);background:var(--gray-50);color:var(--text);min-hei
 .ph{line-height:1;vertical-align:-0.125em;}
 .level-icon,.gap-icon,.comp-icon{color:var(--teal-dark);}
 .member-banner .ph,.gate-privacy .ph,.bench-title .ph,.cta-btn-primary .ph,.cta-btn-secondary .ph,.gate-submit .ph{margin-right:3px;}
+
+/* ===== Warm · inspiring · interactive ===== */
+/* Inspiring results header with warm gold + cyan glow */
+.results-header{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 50%,var(--teal-dark) 100%);box-shadow:0 22px 52px rgba(16,40,90,0.30);}
+.results-header::before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(246,169,59,0.55),transparent 66%);top:-170px;right:-100px;pointer-events:none;}
+.results-header::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(33,199,206,0.40),transparent 68%);bottom:-150px;left:-90px;pointer-events:none;}
+.results-header>*{position:relative;z-index:1;}
+.results-score-ring{background:rgba(255,255,255,0.12);border:3px solid rgba(246,169,59,0.9);box-shadow:0 0 0 6px rgba(246,169,59,0.16),0 12px 28px rgba(0,0,0,0.28);}
+.results-score-num{background:linear-gradient(180deg,#FFE7B8,#F6A93B);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.results-tier{background:linear-gradient(90deg,#FFFFFF,#CDE9EC);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.results-card.active .results-score-ring{animation:ringPop 0.7s cubic-bezier(0.34,1.56,0.64,1) both;}
+@keyframes ringPop{0%{transform:scale(0.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+/* Member banner — warm welcome */
+.member-banner{background:linear-gradient(90deg,var(--gold-soft),#FFFAF0);border:1px solid rgba(246,169,59,0.5);color:var(--gold-deep);font-size:12.5px;}
+/* Gold "You are here" on the ladder */
+.badge-you{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#3A2708;box-shadow:0 4px 12px rgba(228,146,42,0.4);}
+.level-row.current-level{border-color:var(--gold);box-shadow:0 0 0 3px rgba(246,169,59,0.22);}
+.level-row.current-level .level-pip{background:linear-gradient(180deg,var(--gold),var(--gold-deep));}
+.level-row.current-level .level-inner{background:var(--gold-soft);}
+.level-row.current-level .level-icon{color:var(--gold-deep);}
+/* Warm, inviting gate submit */
+.gate-submit{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);box-shadow:0 8px 22px rgba(228,146,42,0.42);}
+.gate-submit:hover{background:linear-gradient(135deg,var(--gold-deep) 0%,#C97F1E 100%);transform:translateY(-2px);box-shadow:0 12px 30px rgba(228,146,42,0.5);}
+.gate-perk-check{background:linear-gradient(135deg,var(--gold-soft),#FFE9C6);color:var(--gold-deep);}
+/* Warm glow on the intro hero */
+.hero::after{background:radial-gradient(circle,rgba(246,169,59,0.30),transparent 66%);width:320px;height:320px;bottom:-120px;left:-70px;}
+/* Interactivity — option buttons */
+.option-btn{transition:transform 0.15s ease,border-color 0.15s ease,background 0.15s ease,box-shadow 0.15s ease;}
+.option-btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(16,40,90,0.09);}
+.option-btn:active{transform:translateY(0);}
+.option-btn.selected{box-shadow:0 6px 16px rgba(87,165,173,0.22);}
+/* Interactivity — cards & buttons lift */
+.section-card{transition:transform 0.2s ease,box-shadow 0.2s ease;}
+.section-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,40,90,0.09);}
+.cta-btn-primary,.cta-btn-secondary,.btn-next,.retake-btn{transition:transform 0.15s ease,box-shadow 0.2s ease,background 0.15s ease;}
+.cta-btn-primary:hover{transform:translateY(-2px);}
+/* Warm CTA block */
+.cta-block{position:relative;overflow:hidden;}
+.cta-block::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(246,169,59,0.42),transparent 66%);top:-140px;right:-80px;pointer-events:none;}
+.cta-block>*{position:relative;z-index:1;}
+.cta-block .cta-btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#3A2708;}
+.cta-block .cta-btn-primary:hover{box-shadow:0 14px 30px rgba(228,146,42,0.5);}
+/* Warm accents on course + summary */
+.course-tag{background:var(--gold-soft);color:var(--gold-deep);}
+.course-eyebrow{color:var(--gold-deep);}
+/* Staggered reveal for ladder / gaps / competitors */
+@keyframes rowIn{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:none;}}
+.results-card.active .level-row,.results-card.active .gap-item,.results-card.active .comp-item{animation:rowIn 0.4s ease both;}
+/* Livelier progress meter */
+.meter-fill{background:linear-gradient(90deg,var(--navy),var(--teal),var(--bright));}
+/* Confetti celebration on unlock */
+.confetti-piece{position:fixed;top:-14px;width:9px;height:14px;border-radius:2px;z-index:9999;opacity:0;pointer-events:none;animation:confettiFall 2.7s ease-in forwards;}
+@keyframes confettiFall{0%{opacity:1;transform:translateY(0) rotate(0);}100%{opacity:0;transform:translateY(96vh) rotate(680deg);}}
+@media (prefers-reduced-motion:reduce){.confetti-piece{display:none;}.results-card.active .results-score-ring,.results-card.active .level-row,.results-card.active .gap-item,.results-card.active .comp-item{animation:none;}}
 </style>
 </head>
 <body>
@@ -367,7 +422,7 @@ body{font-family:var(--sans);background:var(--gray-50);color:var(--text);min-hei
         <div class="gate-lock-overlay"><i class="ph ph-lock"></i></div>
       </div>
       <div class="results-tier">Your score is ready</div>
-      <div class="results-tier-sub">Join the free Edge Academy community to unlock your full AI Readiness Report — your score, your position on the adoption ladder, your capability gaps, and your personalised course.</div>
+      <div class="results-tier-sub">You're one step away. Drop your email to unlock your full AI Readiness Report — your score, your place on the adoption ladder, your biggest opportunities, and the exact course to get you moving.</div>
     </div>
 
     <div class="section-card">
@@ -389,7 +444,7 @@ body{font-family:var(--sans);background:var(--gray-50);color:var(--text);min-hei
         <button class="gate-submit" type="submit">Join the community &amp; unlock <span class="skool-pill">via Skool</span></button>
       </form>
       <div class="gate-privacy"><i class="ph ph-lock"></i> Free to join · No credit card · Unsubscribe anytime</div>
-      <div class="gate-footnote">You'll join the Edge Academy community on Skool, where your full report lives alongside mini-courses, webinars and other Singapore SME owners.</div>
+      <div class="gate-footnote">Your full report unlocks right here on this page. You'll also join the free Edge Academy community on Skool — mini-courses, webinars and a room full of ambitious Singapore SME owners.</div>
     </div>
 
     <button class="retake-btn" onclick="retakeQuiz()">← Retake the quiz</button>
@@ -399,7 +454,7 @@ body{font-family:var(--sans);background:var(--gray-50);color:var(--text);min-hei
   <div class="results-card" id="resultsCard">
 
     <!-- MEMBER CONFIRMATION -->
-    <div class="member-banner"><i class="ph ph-check"></i> You're in — welcome to the Edge Academy community. Your report is saved inside Skool.</div>
+    <div class="member-banner"><i class="ph ph-sparkle"></i> Your AI Readiness Report is ready — here's exactly where you stand, and the clear path to what's next.</div>
 
     <!-- SCORE HEADER -->
     <div class="results-header">
@@ -730,21 +785,54 @@ function submitEmail(e) {
   }
   input.classList.remove('error');
   err.classList.remove('show');
-  /* PRODUCTION HOOK:
-     1. POST { email: input.value, score: total, answers } to your form backend (Tally / Formspree / Google Sheet).
-     2. Then redirect the user to your Skool join link so they become a community member.
-     For this demo we simply unlock the full report in place. */
+  /* PRODUCTION HOOK: to actually collect the email, POST { email, score, answers }
+     to a form backend (Google Forms / Formspree / Zapier) before the redirect below. */
+  // Send them to Skool to join the community (new tab)...
+  window.open('https://www.skool.com/edge-academy-1587', '_blank', 'noopener');
+  // ...and unlock the full report right here.
   showResults();
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function countUp(el, to, dur) {
+  if (!el) return;
+  if (prefersReducedMotion()) { el.textContent = to; return; }
+  const t0 = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - t0) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(eased * to);
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+}
+
+function celebrate() {
+  if (prefersReducedMotion()) return;
+  const colors = ['#F6A93B', '#57A5AD', '#21C7CE', '#16285A', '#FFD98A', '#FFFFFF'];
+  for (let i = 0; i < 48; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.background = colors[i % colors.length];
+    p.style.animationDelay = (Math.random() * 0.5) + 's';
+    p.style.width = (7 + Math.random() * 5) + 'px';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 3400);
+  }
 }
 
 function showResults() {
   showScreen('results');
+  celebrate();
 
   const total = answers.reduce((a, b) => a + b, 0);
   const tier = getTier(total);
   const myLevelIndex = getLevelIndex(total);
 
-  document.getElementById('finalScore').textContent = total;
+  countUp(document.getElementById('finalScore'), total, 1100);
   document.getElementById('resultsTier').textContent = tier.label;
   document.getElementById('resultsSub').textContent = tier.sub;
 
@@ -756,6 +844,7 @@ function showResults() {
     const isAbove = i > myLevelIndex;
     const row = document.createElement('div');
     row.className = 'level-row' + (isCurrent ? ' current-level' : '') + (isAbove ? ' above-level' : '');
+    row.style.animationDelay = (i * 0.07) + 's';
     row.innerHTML = `
       <div class="level-pip"></div>
       <div class="level-inner">
@@ -775,9 +864,10 @@ function showResults() {
   // Gaps
   const gapList = document.getElementById('gapList');
   gapList.innerHTML = '';
-  tier.gaps.forEach(gap => {
+  tier.gaps.forEach((gap, gi) => {
     const item = document.createElement('div');
     item.className = 'gap-item';
+    item.style.animationDelay = (gi * 0.06) + 's';
     item.innerHTML = `<div class="gap-icon">${gap.icon}</div><div><div class="gap-title">${gap.title}</div><div class="gap-desc">${gap.desc}</div></div>`;
     gapList.appendChild(item);
   });
@@ -809,7 +899,7 @@ function showResults() {
     consultBtn.innerHTML = '<i class="ph ph-calendar"></i> Book your free Bespoke consultation <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
     consultBtn.onclick = () => window.open('https://tinyurl.com/edgeacademy-ai', '_blank', 'noopener');
     courseBtn.className = 'cta-btn-secondary';
-    courseBtn.textContent = '<i class="ph ph-graduation-cap"></i> Open your course inside the community →';
+    courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Open your course inside the community →';
     courseBtn.onclick = () => window.open('https://www.skool.com/edge-academy-1587', '_blank', 'noopener');
     document.getElementById('ctaFootnote').textContent = 'Bespoke consultations are free · Speak to a senior advisor within 48 hours · No obligation';
   } else {
@@ -818,7 +908,7 @@ function showResults() {
     courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Open your recommended course in the community <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
     courseBtn.onclick = () => window.open('https://www.skool.com/edge-academy-1587', '_blank', 'noopener');
     consultBtn.className = 'cta-btn-secondary';
-    consultBtn.textContent = '<i class="ph ph-calendar"></i> Book your free consultation now';
+    consultBtn.innerHTML = '<i class="ph ph-calendar"></i> Book your free consultation now';
     consultBtn.onclick = () => window.open('https://tinyurl.com/edgeacademy-ai', '_blank', 'noopener');
     document.getElementById('ctaFootnote').textContent = 'Free community · No credit card required · Speak to a real advisor within 48 hours';
   }
@@ -846,9 +936,10 @@ function showResults() {
   const extra = TIER_EXTRAS[myLevelIndex];
   const compList = document.getElementById('compList');
   compList.innerHTML = '';
-  extra.competitors.forEach(ci => {
+  extra.competitors.forEach((ci, ciIdx) => {
     const el = document.createElement('div');
     el.className = 'comp-item';
+    el.style.animationDelay = (ciIdx * 0.06) + 's';
     el.innerHTML = '<div class="comp-icon">' + ci.icon + '</div><div><div class="comp-title">' + ci.title + '</div><div class="comp-desc">' + ci.desc + '</div></div>';
     compList.appendChild(el);
   });
