@@ -593,7 +593,7 @@ const TIERS = [
       desc: 'The most advanced course in the Edge Academy curriculum. Build autonomous AI agents that handle complex, multi-step business tasks using tools already in your stack. Covers agent design, tool orchestration, error handling, and deployment — with no custom coding required.',
       tags: ['Advanced', '8 modules', 'Agent design', 'Bespoke-adjacent'],
       ctaTitle: 'The gap between Strategist and Visionary is closing fast — in both directions.',
-      ctaSub: 'The AI Agents course is your next step. But at your stage, a Bespoke consultation is where the real leverage is — our team will scope a custom AI build specific to your business within 48 hours.'
+      ctaSub: 'The AI Agents course is your next step. But at your stage, a consultation is where the real leverage is — our team will scope a custom AI build specific to your business within 48 hours.'
     }
   },
   {
@@ -612,7 +612,7 @@ const TIERS = [
       desc: 'Strategic AI leadership for founders, MDs, and senior decision-makers. Covers AI governance, building AI-forward culture, board-level reporting on AI investment, and positioning your business as an AI leader in your industry. Includes Singapore regulatory context throughout.',
       tags: ['Leadership focus', '8 modules', 'Strategy & governance', 'EDG-fundable'],
       ctaTitle: 'Leaders who don\'t build moats become case studies.',
-      ctaSub: 'Book a Bespoke consultation — our team will scope a custom AI roadmap and identify the proprietary capabilities that will keep you ahead. The AI for Business Leaders course runs alongside it.'
+      ctaSub: 'Book a free consultation — our team will scope a custom AI roadmap and identify the proprietary capabilities that will keep you ahead. The AI for Business Leaders course runs alongside it.'
     }
   }
 ];
@@ -838,12 +838,12 @@ function showResults() {
   if (tier.highScorer) {
     // High scorers: Consultation is PRIMARY, course is secondary
     consultBtn.className = 'cta-btn-primary';
-    consultBtn.innerHTML = '<i class="ph ph-calendar"></i> Book your free Bespoke consultation <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
+    consultBtn.innerHTML = '<i class="ph ph-calendar"></i> Book your free consultation <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
     consultBtn.onclick = () => window.open('https://tinyurl.com/edgeacademy-ai', '_blank', 'noopener');
     courseBtn.className = 'cta-btn-secondary';
     courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Open your course inside the community →';
     courseBtn.onclick = () => window.open('https://www.skool.com/edge-academy-1587', '_blank', 'noopener');
-    document.getElementById('ctaFootnote').textContent = 'Bespoke consultations are free · Speak to a senior advisor within 48 hours · No obligation';
+    document.getElementById('ctaFootnote').textContent = 'Consultations are free · Speak to a senior advisor within 48 hours · No obligation';
   } else {
     // Low scorers: Course is PRIMARY, consultation is secondary
     courseBtn.className = 'cta-btn-primary';
