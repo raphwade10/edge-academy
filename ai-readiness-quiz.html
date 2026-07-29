@@ -532,7 +532,7 @@ const TIERS = [
       { icon: '<i class="ph ph-warning-octagon"></i>', title: 'Your data is a regulatory incident waiting to happen.', desc: 'Scattered data across spreadsheets, personal emails, and unmanaged drives is not just inefficient — it is a regulatory exposure. The Marina Bay Sands PDPC fine was S$1 million. Most SMEs are one complaint away from an investigation.' }
     ],
     course: {
-      name: 'AI Foundations for Business',
+      name: 'AI Foundations', url: 'https://www.edgeacademy.ai/en/course-detail/ai-foundations/45654',
       desc: 'The complete starting point for Singapore SMEs. Covers what AI actually is (without the jargon), which tools matter for your industry, how to get your team ready, and how to make your first deployment work. Built for decision-makers, not developers.',
       tags: ['Beginner', '10 modules', 'No tech background needed', 'SkillsFuture eligible'],
       ctaTitle: 'Every week you wait is a week your competitors don\'t.',
@@ -551,7 +551,7 @@ const TIERS = [
       { icon: '<i class="ph ph-trend-down"></i>', title: 'No baseline. No budget case. No approval.', desc: 'No measurement means no budget case. No budget case means no approval. No approval means your competitors continue to widen the gap while you wait for alignment that never comes.' }
     ],
     course: {
-      name: 'Prompt Engineering for Business Professionals',
+      name: 'Prompt Engineering', url: 'https://www.edgeacademy.ai/en/course-detail/prompt-engineering/45683',
       desc: 'The single highest-leverage skill for any Singapore SME professional. Learn how to get 10x more output from every AI tool your business already uses or is considering. Practical, jargon-free, and built around Singapore business contexts.',
       tags: ['Beginner–Intermediate', '8 modules', 'Applicable immediately', 'Pairs with any AI tool'],
       ctaTitle: 'Exploration without structure is just procrastination.',
@@ -570,7 +570,7 @@ const TIERS = [
       { icon: '<i class="ph ph-chart-bar"></i>', title: 'You\'re flying blind on ROI — which means you\'re about to hit a wall', desc: 'Without measurement, your AI spend will eventually face a budget challenge you cannot defend. The CFO question is coming. The board question is coming. Not having the data when it arrives is a career risk, not just a business one.' }
     ],
     course: {
-      name: 'Workflow Automation for Business Professionals',
+      name: 'Automation \u0026 AI With n8n', url: 'https://www.edgeacademy.ai/en/course-detail/Automation%20and%20AI%20With%20N8N/31455',
       desc: 'Connect the AI tools you already use into automated workflows that run without you. Covers no-code automation platforms (Make, n8n), process mapping, and building multi-tool pipelines — with Singapore business examples throughout.',
       tags: ['Intermediate', '8 modules', 'No-code focus', 'Immediate ROI potential'],
       ctaTitle: 'You\'ve proved AI works. Now make it impossible to compete with.',
@@ -589,7 +589,7 @@ const TIERS = [
       { icon: '<i class="ph ph-target"></i>', title: 'You\'re not setting the benchmark. Someone else is.', desc: 'Visionaries in Singapore don\'t just use AI well. They define what good looks like in their category, attract better talent, and win deals before they go to tender. If you\'re not setting the benchmark, a competitor is doing it for you.' }
     ],
     course: {
-      name: 'Building AI Agents with Tools You Already Have',
+      name: 'Automation \u0026 AI With n8n', url: 'https://www.edgeacademy.ai/en/course-detail/Automation%20and%20AI%20With%20N8N/31455',
       desc: 'The most advanced course in the Edge Academy curriculum. Build autonomous AI agents that handle complex, multi-step business tasks using tools already in your stack. Covers agent design, tool orchestration, error handling, and deployment — with no custom coding required.',
       tags: ['Advanced', '8 modules', 'Agent design', 'Bespoke-adjacent'],
       ctaTitle: 'The gap between Strategist and Visionary is closing fast — in both directions.',
@@ -608,7 +608,7 @@ const TIERS = [
       { icon: '<i class="ph ph-push-pin"></i>', title: 'Your lead is accidental. That\'s a risk.', desc: 'You got here through initiative and good decisions. But accidental leadership does not survive leadership changes, board scrutiny, or the next economic cycle. A documented AI strategy is what turns a strong position into a durable competitive advantage.' }
     ],
     course: {
-      name: 'AI for Business Leaders',
+      name: 'AI for Business Leaders', url: 'https://www.edgeacademy.ai/en/course-detail/ai-for-business-leaders/45686',
       desc: 'Strategic AI leadership for founders, MDs, and senior decision-makers. Covers AI governance, building AI-forward culture, board-level reporting on AI investment, and positioning your business as an AI leader in your industry. Includes Singapore regulatory context throughout.',
       tags: ['Leadership focus', '8 modules', 'Strategy & governance', 'EDG-fundable'],
       ctaTitle: 'Leaders who don\'t build moats become case studies.',
@@ -841,14 +841,14 @@ function showResults() {
     consultBtn.innerHTML = '<i class="ph ph-calendar"></i> Book your free consultation <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
     consultBtn.onclick = () => window.open('https://tinyurl.com/edgeacademy-ai', '_blank', 'noopener');
     courseBtn.className = 'cta-btn-secondary';
-    courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Open your course inside the community →';
-    courseBtn.onclick = () => window.open('https://www.skool.com/edge-academy-1587', '_blank', 'noopener');
+    courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Look at our recommended course for you →';
+    courseBtn.onclick = () => window.open(c.url, '_blank', 'noopener');
     document.getElementById('ctaFootnote').textContent = 'Consultations are free · Speak to a senior advisor within 48 hours · No obligation';
   } else {
     // Low scorers: Course is PRIMARY, consultation is secondary
     courseBtn.className = 'cta-btn-primary';
-    courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Open your recommended course in the community <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
-    courseBtn.onclick = () => window.open('https://www.skool.com/edge-academy-1587', '_blank', 'noopener');
+    courseBtn.innerHTML = '<i class="ph ph-graduation-cap"></i> Look at our recommended course for you <span style="font-size:10px;vertical-align:middle;background:rgba(87,165,173,0.22);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;">RECOMMENDED</span>';
+    courseBtn.onclick = () => window.open(c.url, '_blank', 'noopener');
     consultBtn.className = 'cta-btn-secondary';
     consultBtn.innerHTML = '<i class="ph ph-calendar"></i> Book your free consultation now';
     consultBtn.onclick = () => window.open('https://tinyurl.com/edgeacademy-ai', '_blank', 'noopener');
