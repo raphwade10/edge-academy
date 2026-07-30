@@ -190,6 +190,16 @@
   .reveal-t { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1); }
   .reveal-t.in { opacity: 1; transform: none; }
 
+  /* Quiz promo banner */
+  .quiz-promo { position: relative; overflow: hidden; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 28px; background: linear-gradient(120deg, #F1FBFB 0%, #E9F6F8 100%); border: 1px solid rgba(33,199,206,0.35); border-radius: 20px; padding: 28px 32px; box-shadow: 0 10px 30px rgba(16,29,66,0.06); }
+  .quiz-promo::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(180deg, var(--teal), var(--bright)); }
+  .quiz-promo-left { flex: 1; min-width: 240px; }
+  .quiz-promo-badge { display: inline-flex; align-items: center; gap: 7px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bright-deep); background: rgba(33,199,206,0.14); border: 1px solid rgba(33,199,206,0.3); padding: 5px 12px; border-radius: 999px; margin-bottom: 12px; }
+  .quiz-promo h2 { font-size: clamp(1.3rem, 2.6vw, 1.75rem); font-weight: 700; color: var(--navy); }
+  .quiz-promo p { margin-top: 8px; color: var(--muted); font-size: 1rem; max-width: 54ch; }
+  .btn-quiz { background: #fff; color: var(--navy); border: 2px solid var(--teal); box-shadow: 0 6px 16px rgba(33,199,206,0.2); }
+  .btn-quiz:hover { background: linear-gradient(135deg, var(--teal), var(--bright)); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(33,199,206,0.4); }
+
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } .reveal-t { opacity: 1 !important; transform: none !important; } }
 </style>
 </head>
@@ -232,6 +242,28 @@
           <span class="chip chip-2"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tailored to your business</span>
           <span class="chip chip-3"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Save time &amp; money</span>
           <span class="chip chip-4"><span class="chip-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Practical quick wins</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ PROMO -->
+    <section class="section" style="padding-top:56px; padding-bottom:0;">
+      <div class="wrap">
+        <div class="quiz-promo">
+          <div class="quiz-promo-left">
+            <span class="quiz-promo-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M12 12l5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              Free &middot; 2 minutes
+            </span>
+            <h2>Not sure where to start? Take the AI Readiness Quiz</h2>
+            <p>Answer 8 quick questions to get your AI Readiness Score out of 40 &mdash; see exactly where your business stands and what to do next, before you book.</p>
+          </div>
+          <div class="quiz-promo-right">
+            <a class="btn btn-lg btn-quiz" href="ai-readiness-quiz.html">
+              Take the free quiz
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -341,7 +373,7 @@
       var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
       if (mq && mq.matches) return;
       if (!('IntersectionObserver' in window)) return;
-      var els = document.querySelectorAll('.card, .step, .section-head, .book-band, .form-embed, .how-media');
+      var els = document.querySelectorAll('.card, .step, .section-head, .book-band, .form-embed, .how-media, .quiz-promo');
       els.forEach(function (el) { el.classList.add('reveal-t'); });
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
