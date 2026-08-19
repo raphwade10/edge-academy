@@ -57,15 +57,15 @@
     transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, color 200ms ease;
   }
   .btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
-  .btn-primary { background: #1121AF; color: #fff; box-shadow: 0 8px 22px rgba(17,33,175,0.32); }
-  .btn-primary:hover { background: #0D1A8A; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(17,33,175,0.45); }
+  .btn-primary { background: linear-gradient(135deg, var(--teal) 0%, var(--bright) 100%); color: #fff; box-shadow: 0 8px 24px rgba(33,199,206,0.42); }
+  .btn-primary:hover { background: linear-gradient(135deg, var(--bright-deep) 0%, var(--bright) 100%); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(33,199,206,0.55); }
   .btn-nav { background: var(--navy); color: #fff; padding: 11px 22px; font-size: 15px; }
   .btn-nav:hover { background: var(--navy-deep); transform: translateY(-1px); }
   .btn-lg { font-size: 18px; padding: 18px 36px; }
   .btn-text {
     display: inline-flex; align-items: center; gap: 6px;
     font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px;
-    color: #1121AF; text-decoration: none; padding: 8px 4px;
+    color: var(--teal-dark); text-decoration: none; padding: 8px 4px;
     transition: color 200ms ease, transform 200ms ease;
   }
   .btn-text:hover { color: var(--navy); transform: translateX(2px); }
@@ -169,8 +169,8 @@
   }
   .book-band h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); color: #fff; }
   .book-band p { margin: 16px auto 30px; color: #C7D2E8; max-width: 52ch; font-size: 1.05rem; }
-  .book-band .btn-primary { background: #1121AF; }
-  .book-band .btn-primary:hover { background: #0D1A8A; color: #fff; }
+  .book-band .btn-primary { background: var(--teal); }
+  .book-band .btn-primary:hover { background: var(--teal-light); color: var(--navy-deep); }
 
   /* ---------- Embedded form ---------- */
   .form-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-md); overflow: hidden; padding: 8px; }
@@ -197,8 +197,8 @@
   .quiz-promo-badge { display: inline-flex; align-items: center; gap: 7px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bright-deep); background: rgba(33,199,206,0.14); border: 1px solid rgba(33,199,206,0.3); padding: 5px 12px; border-radius: 999px; margin-bottom: 12px; }
   .quiz-promo h2 { font-size: clamp(1.3rem, 2.6vw, 1.75rem); font-weight: 700; color: var(--navy); }
   .quiz-promo p { margin-top: 8px; color: var(--muted); font-size: 1rem; max-width: 54ch; }
-  .btn-quiz { background: #fff; color: #1121AF; border: 2px solid #1121AF; box-shadow: 0 6px 16px rgba(17,33,175,0.18); }
-  .btn-quiz:hover { background: #1121AF; color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(17,33,175,0.4); }
+  .btn-quiz { background: #fff; color: var(--navy); border: 2px solid var(--teal); box-shadow: 0 6px 16px rgba(33,199,206,0.2); }
+  .btn-quiz:hover { background: linear-gradient(135deg, var(--teal), var(--bright)); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(33,199,206,0.4); }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } .reveal-t { opacity: 1 !important; transform: none !important; } }
 
@@ -207,14 +207,9 @@
   .site-header::after{content:none;}
   .hdr-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:22px;padding:12px 28px;position:relative;}
   .hdr-logo img{height:40px;display:block;}
-  .hdr-nav{display:flex;align-items:center;gap:22px;flex:1;}
-  .hdr-nav>a{font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#1B2130;text-decoration:none;line-height:1.15;transition:color .15s;}
+  .hdr-nav{display:flex;align-items:center;gap:18px;flex:1;flex-wrap:nowrap;}
+  .hdr-nav>a{font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#1B2130;text-decoration:none;line-height:1.15;white-space:nowrap;transition:color .15s;}
   .hdr-nav>a:hover,.hdr-nav>a.active{color:#5A6DF2;}
-  .hdr-auth{display:flex;align-items:center;gap:10px;flex:none;}
-  .hdr-auth-mobile{display:none;}
-  .hdr-signup,.hdr-login{font-family:'Inter',sans-serif;font-weight:700;font-size:15px;padding:10px 20px;border-radius:6px;text-decoration:none;color:#fff;transition:filter .15s,transform .15s;white-space:nowrap;}
-  .hdr-signup{background:#1121AF;} .hdr-signup:hover{filter:brightness(1.12);transform:translateY(-1px);}
-  .hdr-login{background:#FF720C;} .hdr-login:hover{filter:brightness(1.06);transform:translateY(-1px);}
   .hdr-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto;}
   .hdr-toggle span{width:24px;height:2.5px;background:#1B2130;border-radius:2px;display:block;}
   @media(max-width:1024px){
@@ -222,8 +217,6 @@
     .hdr-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:2px;background:#fff;border-bottom:1px solid #ECEEF2;box-shadow:0 14px 26px rgba(0,0,0,0.08);padding:10px 24px 20px;}
     .site-header.open .hdr-nav{display:flex;}
     .hdr-nav>a{padding:11px 0;width:100%;font-size:16px;}
-    .hdr-auth{display:none;}
-    .hdr-auth-mobile{display:flex;gap:10px;margin-top:10px;}
   }
   .site-footer{background:#fff;border-top:1px solid #E6E9EF;color:#3C4657;margin-top:52px;}
   .foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;padding:52px 28px 32px;}
@@ -251,16 +244,8 @@
         <a href="https://www.edgeacademy.ai/en/workflows">Workflows</a>
         <a href="https://www.edgeacademy.ai/en/contact-us">Contact Us</a>
         <a class="active" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ16IKC9t3j0twqBU9dAHUOAHFqUTRIGqGB2drnB3Jc-y5W2MXvdji1cXiUcOySSBA5VKmCuJgR7" target="_blank" rel="noopener">Book your free consultation now</a>
-        <span class="hdr-auth-mobile">
-          <a class="hdr-signup" href="https://www.edgeacademy.ai/en/signup">Sign up</a>
-          <a class="hdr-login" href="https://www.edgeacademy.ai/en/login">Login</a>
-        </span>
       </nav>
       <button class="hdr-toggle" aria-label="Toggle menu" onclick="document.getElementById('siteHeader').classList.toggle('open')"><span></span><span></span><span></span></button>
-      <div class="hdr-auth">
-        <a class="hdr-signup" href="https://www.edgeacademy.ai/en/signup">Sign up</a>
-        <a class="hdr-login" href="https://www.edgeacademy.ai/en/login">Login</a>
-      </div>
     </div>
   </header>
 
